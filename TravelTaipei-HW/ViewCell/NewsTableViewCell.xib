@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCell" rowHeight="159" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="TravelTaipei_HW" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="159"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="462" height="159"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5Y-bS-LkO" userLabel="BG View">
+                        <rect key="frame" x="0.0" y="0.0" width="462" height="159"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uEO-hT-8lM">
+                                <rect key="frame" x="16" y="8" width="430" height="143"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水門何時關？北市府設多管道　民眾防汛資訊不漏接" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5N-sX-OM6">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="b5h-ia-fLf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcm-8f-xjd">
+                                        <rect key="frame" x="0.0" y="56" width="417" height="87"/>
+                                        <string key="text">「水門何時關閉？」「紅黃線是否開放臨停？」「沙包去哪領取？」「明天會不會放假？」臺北市政府觀傳局指出，每年5月1日至11月30日為防汛期，極端氣候導致瞬間強降雨的情況也越趨頻繁。北市水利處LINE官方帳號「戀戀水綠 臺北水利」（@taipeiheo），在汛期期間提供「水情資訊查找服務」，民眾點選「警報器訂閱」並選擇住家行政里，只要住家周邊水情超過警戒值，可即時收到警報資訊，也為民眾提供自主應變相關資訊。\r\n\r\n\r\n觀傳局進一步說，若是臺北市政府LINE官方帳號（@taipei）的好友，在汛期前也會收到防汛準備相關資訊，如：低窪地區民眾一定要注意疏散路線及位置，清溝渠、安裝防水閘門或沙包備用。而豪大雨或颱風期間，也會發布臺北市河岸邊疏散門啟閉狀況、市區內紅黃線臨停範圍、停班停課等市府應變作為等即時資訊，讓民眾防汛資訊不漏接，並做好因應準備。\r\n\r\n\r\n▲颱風期間，自主防災才能保護生命及財產安全。(圖片提供：臺北市政府觀光傳播局)\r\n\r\n\r\n觀傳局說明，使用臺北市政府LINE官方帳號的民眾，可點選圖文選單中「訂閱市政訊息」功能，其中「防汛資訊」包含水情、災情、淹水警示及紅黃線停車等，而其他災情資訊也能以行政區查詢最新資訊，讓民眾在汛期期間，輕鬆掌握各項資訊。\r\n\r\n\r\n觀傳局也提醒，車輛停放於堤外停車場的車主，務必提高警覺，在豪大雨發生時，可先將車輛駛離，或主動註冊北市停管處官網「停車查詢一站式服務」通知服務，在堤外停車場發生緊急事故或疏散必要時，系統將通知有登錄的車主儘速駛離、免於財損。登錄方式可上官網或掃描堤外停車場QR CODE。\r\n\r\n\r\n觀傳局補充，除了市府兩個LINE官方帳號外，民眾可以掌握汛期資訊的管道還有臺北市防災資訊網，或者下載臺北市行動防災APP，同樣可更加即時掌握紅黃線停車和水閘門開關閉資訊，保障自身生命及財產安全。</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uEO-hT-8lM" secondAttribute="bottom" constant="8" id="3JF-yh-45w"/>
+                            <constraint firstItem="uEO-hT-8lM" firstAttribute="leading" secondItem="y5Y-bS-LkO" secondAttribute="leading" constant="16" id="7Ij-sl-Ua1"/>
+                            <constraint firstAttribute="trailing" secondItem="uEO-hT-8lM" secondAttribute="trailing" constant="16" id="7vW-r4-xSX"/>
+                            <constraint firstItem="uEO-hT-8lM" firstAttribute="top" secondItem="y5Y-bS-LkO" secondAttribute="top" constant="8" id="Eys-Hb-ra9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="y5Y-bS-LkO" secondAttribute="bottom" id="AjC-vt-QTn"/>
+                    <constraint firstItem="y5Y-bS-LkO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FI8-sC-mTB"/>
+                    <constraint firstItem="y5Y-bS-LkO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Zv8-OP-K2H"/>
+                    <constraint firstAttribute="trailing" secondItem="y5Y-bS-LkO" secondAttribute="trailing" id="kDf-Bd-Rwn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="y5Y-bS-LkO" id="2ki-8M-nkt"/>
+                <outlet property="descLb" destination="wcm-8f-xjd" id="Zhf-8f-wys"/>
+                <outlet property="titleLb" destination="g5N-sX-OM6" id="LPp-hn-qY2"/>
+            </connections>
+            <point key="canvasLocation" x="245.80152671755724" y="39.08450704225352"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

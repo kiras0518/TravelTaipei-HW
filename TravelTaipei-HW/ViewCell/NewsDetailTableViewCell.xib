@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="785" id="KGk-i7-Jjw" customClass="NewsDetailTableViewCell" customModule="TravelTaipei_HW" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="607" height="785"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="607" height="785"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVw-lW-K7Y" userLabel="BG View">
+                        <rect key="frame" x="0.0" y="0.0" width="607" height="785"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="兒童節「逆向旅遊」來台北！北市觀傳局推日夜皆美私房點 闔家遠眺城市風景兼拍美照" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UK6-8F-fhS">
+                                <rect key="frame" x="16" y="16" width="575" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="i0F-WI-sjI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IuH-cT-aNw">
+                                <rect key="frame" x="16" y="94" width="575" height="42"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="posted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-pJ-v1d">
+                                        <rect key="frame" x="0.0" y="0.0" width="575" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="modified" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMj-Jo-ZUg">
+                                        <rect key="frame" x="0.0" y="25" width="575" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Wv3-uw-pJK"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Hq-e9-diN">
+                                <rect key="frame" x="16" y="152" width="575" height="617"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i5-rR-XQ1">
+                                        <rect key="frame" x="0.0" y="0.0" width="575" height="617"/>
+                                        <string key="text">兒童節「逆向」玩台北，臺北市政府觀光傳播局指出，北市有多處場館配合教育局兒童月活動，於連假期間推出多項兒童專屬優惠，自來水園區也邀請人氣幼兒讀物主角「小行星樂樂」迎賓並與民眾同樂；此外，觀傳局也推薦四大出遊好去處，包含日夜皆美的登山景點、自然生態園區，讓家長輕鬆帶著孩子放電一整天！\r\n\r\n▲北眼平台眺望市區風景(大地工程處提供)\r\n\r\n位於劍潭山上圓山風景區的「北眼平台」是北市新亮點！觀傳局指出，圓山風景區過去為軍事管制區，具有重要戰略位置，坐擁絕佳風水，被稱為龍尾穴；民眾只要搭捷運至劍潭站，往劍潭青年活動中心穿越地下道，由中山北路圓山風景區牌樓的登山口進入，沿指標經老地方觀景平台、微風平台就能抵達；而近年陸續完成的「微風平台」和「北眼平台」，採無邊際高通透性設計，視野遼闊，不僅能欣賞全台北都會日落及夜景，也能拍出極美照片。\r\n\r\n▲南港山水綠生態公園美景(圖片提供：臺北市政府觀光傳播局)\r\n\r\n觀傳局進一步說，「南港山水綠生態公園」也是帶著孩子放電的好選擇，公園前身是山豬窟垃圾衛生掩埋場，經北市綠化成生態公園，並打造創能、儲能示範場域，除了重新設計場內既有設備，並設置互動及遊戲性的環教解說設施；園區內展望台白天可遠眺南港市區及內湖山區，夜間則可欣賞國道3號及5號高速公路車行夜景，日夜皆精彩。\r\n\r\n▲寶藏巖光節展示圖\r\n\r\n&amp;nbsp;3月25日起展開的寶藏巖光節活動同樣日夜皆美，觀傳局也提到，位在公館的寶藏巖國際藝術村，今年光節主題為「天選之人」，邀請12位藝術家在寶藏巖的12個展演空間，以「接龍」的思維邏輯，共同發展或聯想一個動人的故事，企圖提供一種具有「起、承、轉、合」線性觀賞方式；民眾白天可先到寶藏巖聚落走走，待日暮低垂再探索燈光魔幻魅力，並順道前往周邊公館商圈嚐美食。\r\n\r\n▲渭水驛站門口及展場照(圖片提供：臺北市政府觀光傳播局)\r\n\r\n觀傳局也說，若想帶著小朋友欣賞藝文展覽，除了北市美術館，位在大稻埕的「渭水驛站」是新選擇。建築本身為當年蔣渭水在大稻埕開設的大安醫院舊址，以常設展覽《你好，渭水》展出蔣渭水的生平經歷，及致力推動臺灣新文化運動中的經歷過程。參觀後，可沿著迪化街一路走逛各式文創商店，並漫步至大稻埕碼頭，騎腳踏車沿延平河濱公園欣賞夕陽美景。</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="0Hq-e9-diN" firstAttribute="leading" secondItem="tVw-lW-K7Y" secondAttribute="leading" constant="16" id="0tH-8H-3vo"/>
+                            <constraint firstAttribute="trailing" secondItem="IuH-cT-aNw" secondAttribute="trailing" constant="16" id="3Ir-Hv-hDT"/>
+                            <constraint firstItem="0Hq-e9-diN" firstAttribute="top" secondItem="IuH-cT-aNw" secondAttribute="bottom" constant="16" id="81k-VO-Kw0"/>
+                            <constraint firstAttribute="bottom" secondItem="0Hq-e9-diN" secondAttribute="bottom" constant="16" id="9ra-Bw-2As"/>
+                            <constraint firstItem="UK6-8F-fhS" firstAttribute="leading" secondItem="tVw-lW-K7Y" secondAttribute="leading" constant="16" id="NdQ-YY-2sD"/>
+                            <constraint firstItem="IuH-cT-aNw" firstAttribute="leading" secondItem="tVw-lW-K7Y" secondAttribute="leading" constant="16" id="T5b-Vp-4dG"/>
+                            <constraint firstItem="UK6-8F-fhS" firstAttribute="top" secondItem="tVw-lW-K7Y" secondAttribute="top" constant="16" id="YoF-1g-gKq"/>
+                            <constraint firstItem="IuH-cT-aNw" firstAttribute="top" secondItem="UK6-8F-fhS" secondAttribute="bottom" constant="8" id="aBR-vE-yib"/>
+                            <constraint firstAttribute="trailing" secondItem="UK6-8F-fhS" secondAttribute="trailing" constant="16" id="fhS-J5-tN3"/>
+                            <constraint firstAttribute="trailing" secondItem="0Hq-e9-diN" secondAttribute="trailing" constant="16" id="r8y-6e-k6N"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UK6-8F-fhS" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.089172" id="HKb-Yd-mbT"/>
+                    <constraint firstAttribute="bottom" secondItem="tVw-lW-K7Y" secondAttribute="bottom" id="Svc-MU-anl"/>
+                    <constraint firstItem="tVw-lW-K7Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="an2-VV-Nb1"/>
+                    <constraint firstAttribute="trailing" secondItem="tVw-lW-K7Y" secondAttribute="trailing" id="cGX-gH-Rjj"/>
+                    <constraint firstItem="tVw-lW-K7Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xf2-Ia-4vZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="tVw-lW-K7Y" id="JeT-CG-AvA"/>
+                <outlet property="descLb" destination="2i5-rR-XQ1" id="BQ7-UF-vzW"/>
+                <outlet property="modifiedLb" destination="UMj-Jo-ZUg" id="iWG-zI-Ffx"/>
+                <outlet property="postedLb" destination="nUZ-pJ-v1d" id="AG3-ie-HGy"/>
+                <outlet property="titleLb" destination="UK6-8F-fhS" id="4cO-Hm-5fo"/>
+            </connections>
+            <point key="canvasLocation" x="362.59541984732823" y="232.04225352112678"/>
+        </tableViewCell>
+    </objects>
+</document>
