@@ -12,18 +12,7 @@ import SnapKit
 import Kingfisher
 
 class AttractionsDetailViewController: UIViewController, UIScrollViewDelegate {
-    
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var goAction: UIButton!
-    @IBOutlet weak var openLb: UILabel!
-    @IBOutlet weak var addressLb: UILabel!
-    @IBOutlet weak var phoneLb: UILabel!
-    @IBOutlet weak var websiteLb: UILabel!
-    
-    @IBAction func goWebAction(_ sender: UIButton) {
-        openWebViewButtonTapped()
-    }
-    
+
     var attractionsData: AttractionsModel?
     
     // UI 元件
@@ -32,6 +21,7 @@ class AttractionsDetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isScrollEnabled = true
+        scrollView.backgroundColor = .white
         return scrollView
     }()
     
@@ -43,22 +33,86 @@ class AttractionsDetailViewController: UIViewController, UIScrollViewDelegate {
         return pageControl
     }()
     
+    lazy var textView2: UITextView = {
+        let textView = UITextView()
+        textView.backgroundColor = .white
+        textView.text = attractionsData?.introduction ?? ""
+        textView.font = .systemFont(ofSize: 14)
+        textView.layer.cornerRadius = 8
+        return textView
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 8.0
+        return stackView
+    }()
+    
+    lazy var openLabel: UILabel = {
+        let label = UILabel()
+        label.text = "營業時間：\(attractionsData?.open_time ?? "")"
+        return label
+    }()
+    
+    lazy var addressLabel: UILabel = {
+        let label = UILabel()
+        label.text = "地址：\(attractionsData?.address ?? "")"
+        return label
+    }()
+    
+    lazy var phoneLabel: UILabel = {
+        let label = UILabel()
+        label.text = "聯絡電話：\(attractionsData?.tel ?? "")"
+        return label
+    }()
+    
+    lazy var websiteLabel: UILabel = {
+        let label = UILabel()
+        label.text = "網址：\(attractionsData?.url ?? "")"
+        return label
+    }()
+    
+    lazy var goWebButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("前往官網", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(goWebSite(_:)), for: .touchUpInside)
+        button.backgroundColor = UIColor(red: 229/255, green: 172/255, blue: 67/255, alpha: 1)
+        button.layer.cornerRadius = 8
+        return button
+    }()
+    
+    @objc private func goWebSite(_ sender: UIButton) {
+        let webVC = WebViewController()
+        webVC.urlString = attractionsData?.url ?? ""
+        present(webVC, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupStackView()
         setupScrollView()
         setupPageControl()
         setupConstraints()
     }
     
+    private func setupStackView() {
+        stackView.addArrangedSubview(openLabel)
+        stackView.addArrangedSubview(addressLabel)
+        stackView.addArrangedSubview(phoneLabel)
+        stackView.addArrangedSubview(websiteLabel)
+        stackView.addArrangedSubview(goWebButton)
+    }
+    
     private func setupViews() {
-        textView.text = attractionsData?.introduction ?? ""
-        openLb.text = "營業時間：\(attractionsData?.open_time ?? "")"
-        addressLb.text = "地址：\(attractionsData?.address ?? "")"
-        phoneLb.text = "聯絡電話：\(attractionsData?.tel ?? "")"
-        websiteLb.text = "網址：\(attractionsData?.url ?? "")"
+        
         view.addSubview(scrollView)
         view.addSubview(pageControl)
+        view.addSubview(stackView)
+        view.addSubview(textView2)
     }
     
     private func setupConstraints() {
@@ -72,6 +126,18 @@ class AttractionsDetailViewController: UIViewController, UIScrollViewDelegate {
             make.top.equalTo(scrollView.snp.bottom).offset(4)  // PageControl 在 ScrollView 下方
             make.centerX.equalToSuperview()
         }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.equalTo(pageControl.snp.bottom).offset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        textView2.snp.makeConstraints { make in
+                make.top.equalTo(stackView.snp.bottom).offset(16)
+                make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(stackView).multipliedBy(1.15)
+                make.bottom.lessThanOrEqualTo(view.safeAreaLayoutGuide.snp.bottom).inset(16)
+            }
     }
     
     

@@ -147,79 +147,9 @@
                     <view key="view" contentMode="scaleToFill" id="3Y4-0Q-g1S">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ONi-cr-mpR">
-                                <rect key="frame" x="8" y="430" width="377" height="160"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="營業時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnI-wK-jkM">
-                                        <rect key="frame" x="0.0" y="0.0" width="377" height="25.666666666666668"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIa-tt-Hat">
-                                        <rect key="frame" x="0.0" y="33.666666666666686" width="377" height="25.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="聯絡電話" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNM-ii-aV1">
-                                        <rect key="frame" x="0.0" y="67.333333333333314" width="377" height="25.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="網址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHm-wm-f3h">
-                                        <rect key="frame" x="0.0" y="100.66666666666663" width="377" height="25.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMq-Wa-GYI">
-                                        <rect key="frame" x="0.0" y="134.33333333333337" width="377" height="25.666666666666657"/>
-                                        <color key="tintColor" red="0.95686274770000002" green="0.74901962280000001" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="前往網站">
-                                            <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="goWebAction:" destination="hbO-Eo-Z0q" eventType="touchUpInside" id="fVU-lA-eso"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="Hkz-RN-Ed7"/>
-                                </constraints>
-                            </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P3D-Wp-CFk">
-                                <rect key="frame" x="16" y="618" width="361" height="200"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9JR-t3-h1Z"/>
                         <color key="backgroundColor" white="0.90004916958041958" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="P3D-Wp-CFk" firstAttribute="top" secondItem="ONi-cr-mpR" secondAttribute="bottom" constant="28" id="SbH-yN-vZZ"/>
-                            <constraint firstItem="P3D-Wp-CFk" firstAttribute="bottom" secondItem="9JR-t3-h1Z" secondAttribute="bottom" id="cVt-Qi-Zfo"/>
-                            <constraint firstItem="P3D-Wp-CFk" firstAttribute="height" secondItem="3Y4-0Q-g1S" secondAttribute="height" multiplier="0.234742" id="cbU-Zs-22m"/>
-                            <constraint firstItem="ONi-cr-mpR" firstAttribute="leading" secondItem="9JR-t3-h1Z" secondAttribute="leading" constant="8" id="l2i-ob-kFn"/>
-                            <constraint firstItem="9JR-t3-h1Z" firstAttribute="trailing" secondItem="ONi-cr-mpR" secondAttribute="trailing" constant="8" id="sl7-3M-oB0"/>
-                            <constraint firstItem="P3D-Wp-CFk" firstAttribute="leading" secondItem="9JR-t3-h1Z" secondAttribute="leading" constant="16" id="t4i-2W-gVu"/>
-                            <constraint firstItem="9JR-t3-h1Z" firstAttribute="trailing" secondItem="P3D-Wp-CFk" secondAttribute="trailing" constant="16" id="yrb-Il-Krz"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="addressLb" destination="wIa-tt-Hat" id="Mm8-DU-1oP"/>
-                        <outlet property="goAction" destination="MMq-Wa-GYI" id="QMb-Pa-CdL"/>
-                        <outlet property="openLb" destination="ZnI-wK-jkM" id="R5b-cV-ITY"/>
-                        <outlet property="phoneLb" destination="cNM-ii-aV1" id="xdm-FE-aXw"/>
-                        <outlet property="textView" destination="P3D-Wp-CFk" id="11R-SZ-V8r"/>
-                        <outlet property="websiteLb" destination="uHm-wm-f3h" id="Mr9-kG-leZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4L-AA-n9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,14 +188,8 @@
     </scenes>
     <resources>
         <image name="globe" catalog="system" width="128" height="123"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
