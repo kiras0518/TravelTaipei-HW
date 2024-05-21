@@ -8,8 +8,15 @@
 import Foundation
 import Alamofire
 
+struct AttractionRequestParameters {
+    var categoryIds: String?
+    var nlat: Double?
+    var elong: Double?
+    var page: Int?
+}
+
 protocol AttractionsAPIServiceProtocol {
-    func fetchAttractions(categoryIds: String?, nlat: Double?, elong: Double?, page: Int?,
+    func fetchAttractions(parameters: AttractionRequestParameters,
                           completion: @escaping (Result<BaseModel<AttractionsModel>, APIError>) -> Void)
 }
 
@@ -21,9 +28,15 @@ class AttractionsAPIService: AttractionsAPIServiceProtocol {
         self.apiServices = apiServices
     }
     
-    func fetchAttractions(categoryIds: String?, nlat: Double?, elong: Double?, page: Int?,
+    func fetchAttractions(parameters: AttractionRequestParameters,
                           completion: @escaping (Result<BaseModel<AttractionsModel>, APIError>) -> Void) {
-        apiServices.requestGenerator(route: AttractionsAPIConfiguration.all(categoryIds: categoryIds, nlat: nlat, elong: elong, page: page),
+        
+        let attractionsAPIConfiguration = AttractionsAPIConfiguration.all(categoryIds: parameters.categoryIds,
+                                                    nlat: parameters.nlat,
+                                                    elong: parameters.elong,
+                                                    page: parameters.page)
+        
+        apiServices.requestGenerator(route: attractionsAPIConfiguration,
                                      type: BaseModel<AttractionsModel>.self) { result in
             switch result {
             case .success(let data):

@@ -22,9 +22,11 @@ class NewsViewModel {
         self.eventsService = eventsService
     }
     
+    
     func getNews(begin: String?, end: String?, page: Int?) {
-        eventsService.fetchNewsData(begin: begin, end: end, page: page,
-                                    modelType: BaseModel<NewsModel>.self) { [weak self] result in
+        eventsService.fetchNewsData(parameters: EventsRequestParameters(begin: begin,
+                                                                        end: end,
+                                                                        page: page)) { [weak self] result in
             switch result {
             case .success(let baseModel):
                 self?.newsData.value = baseModel.data
@@ -36,8 +38,9 @@ class NewsViewModel {
     }
     
     func getActivity(begin: String?, end: String?, page: Int?) {
-        eventsService.fetchActivityData(begin: begin, end: end, page: page,
-                                        modelType: BaseModel<EventActivityModel>.self) { [weak self] result in
+        eventsService.fetchActivityData(parameters: EventsRequestParameters(begin: begin,
+                                                                            end: end,
+                                                                            page: page)) { [weak self] result in
             switch result {
             case .success(let baseModel):
                 self?.activityData.value = baseModel.data
@@ -49,8 +52,10 @@ class NewsViewModel {
     }
     
     func getCalendar(categoryId: Int?, begin: String?, end: String?, page: Int?) {
-        eventsService.fetchCalendarData(categoryId: categoryId, begin: begin, end: end, page: page,
-                                        modelType: BaseModel<EventCalendarModel>.self) { [weak self] result in
+        eventsService.fetchCalendarData(parameters: EventsRequestParameters(begin: begin,
+                                                                            end: end,
+                                                                            page: page,
+                                                                            categoryId: categoryId)) { [weak self] result in
             switch result {
             case .success(let baseModel):
                 self?.calendarData.value = baseModel.data
@@ -61,4 +66,45 @@ class NewsViewModel {
             }
         }
     }
+    
+    
+//    func getNews(begin: String?, end: String?, page: Int?) {
+//        eventsService.fetchNewsData(begin: begin, end: end, page: page,
+//                                    modelType: BaseModel<NewsModel>.self) { [weak self] result in
+//            switch result {
+//            case .success(let baseModel):
+//                self?.newsData.value = baseModel.data
+//            case .failure(let error):
+//                print("Error fetching news: \(error.localizedDescription)")
+//                self?.errorMessage.value = error.localizedDescription
+//            }
+//        }
+//    }
+    
+//    func getActivity(begin: String?, end: String?, page: Int?) {
+//        eventsService.fetchActivityData(begin: begin, end: end, page: page,
+//                                        modelType: BaseModel<EventActivityModel>.self) { [weak self] result in
+//            switch result {
+//            case .success(let baseModel):
+//                self?.activityData.value = baseModel.data
+//            case .failure(let error):
+//                print("Error fetching news: \(error.localizedDescription)")
+//                self?.errorMessage.value = "Error fetching news: \(error.localizedDescription)"
+//            }
+//        }
+//    }
+//
+//    func getCalendar(categoryId: Int?, begin: String?, end: String?, page: Int?) {
+//        eventsService.fetchCalendarData(categoryId: categoryId, begin: begin, end: end, page: page,
+//                                        modelType: BaseModel<EventCalendarModel>.self) { [weak self] result in
+//            switch result {
+//            case .success(let baseModel):
+//                self?.calendarData.value = baseModel.data
+//                print("calendarData", baseModel.data)
+//            case .failure(let error):
+//                print("Error fetching news: \(error.localizedDescription)")
+//                self?.errorMessage.value = "Error fetching news: \(error.localizedDescription)"
+//            }
+//        }
+//    }
 }

@@ -164,7 +164,7 @@ enum MiscellaneousAPIConfiguration: APIConfiguration {
 
 enum ToursAPIConfiguration: APIConfiguration {
     
-    case theme(categoryIds: String?, page: Int)
+    case theme(categoryIds: String?, page: Int?)
 
     var method: HTTPMethod { .get }
     
@@ -172,7 +172,7 @@ enum ToursAPIConfiguration: APIConfiguration {
         switch self {
         case .theme(let categoryIds, let page):
             return ["categoryIds": categoryIds ?? "",
-                    "page": page]
+                    "page": page ?? 0]
         }
         
     }

@@ -21,7 +21,11 @@ class AttractionViewModel {
     
     func getAttraction(categoryIds: String?, nlat: Double?, elong: Double?, page: Int?) {
         
-        sttractionService.fetchAttractions(categoryIds: categoryIds, nlat: nlat, elong: elong, page: page) { [weak self] result in
+        sttractionService.fetchAttractions(parameters:
+                                            AttractionRequestParameters(categoryIds: categoryIds,
+                                                                        nlat: nlat,
+                                                                        elong: elong,
+                                                                        page: page)) { [weak self] result in
             switch result {
             case .success(let baseModel):
                 self?.attractionsData.value = baseModel.data
@@ -30,6 +34,5 @@ class AttractionViewModel {
                 self?.errorMessage.value = "Error fetching news: \(error.localizedDescription)"
             }
         }
-
     }
 }

@@ -63,10 +63,9 @@ class LoadingView: UIView {
 
 public final class ActivityIndicatorUtils {
     
-    private static let loadingView = LoadingView()
+    static let loadingView = LoadingView()
     
-    init() {
-    }
+    init() {}
     
     static func addActivityIndicator(to view: UIView) {
         view.addSubview(loadingView)

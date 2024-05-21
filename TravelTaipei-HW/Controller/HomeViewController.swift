@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
     
     private let headerView = NewsHeaderView(frame: CGRect(x: 0, y: 0, width: 0, height: 60))
     
+    private let dispatchGroup = DispatchGroup()
+    
     private func setupView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,23 +45,38 @@ class HomeViewController: UIViewController {
         navigationItem.title = title
     }
     
+    private func fetchData() {
+        dispatchGroup.enter()
+        newsViewModel.getNews(begin: nil, end: nil, page: 1)
+ 
+        dispatchGroup.enter()
+        attviewModel.getAttraction(categoryIds: nil, nlat: nil, elong: nil, page: 1)
+        
+        // 監控 dispatch group，所有請求完成後停止動畫
+        dispatchGroup.notify(queue: .main) {
+            ActivityIndicatorUtils.stopAnimating()
+        }
+    }
+    
+    private func setupObservers() {
+        // 監聽資料變化, 更新列表
+        newsViewModel.newsData.addObserver(self) { [weak self] in
+            self?.tableView.reloadData()
+            self?.dispatchGroup.leave()
+        }
+        
+        attviewModel.attractionsData.addObserver(self) { [weak self] in
+            self?.tableView.reloadData()
+            self?.dispatchGroup.leave()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
-        newsViewModel.getNews(begin: nil, end: nil, page: 1) 
-        attviewModel.getAttraction(categoryIds: nil, nlat: nil, elong: nil, page: 1)
-        
-        // 監聽資料變化, 更新列表
-        newsViewModel.newsData.addObserver(self) { [weak self] in
-            self?.tableView.reloadData()
-        }
-        
-        attviewModel.attractionsData.addObserver(self) { [weak self] in
-            ActivityIndicatorUtils.stopAnimating()
-            self?.tableView.reloadData()
-        }
-        
+        fetchData()
+        setupObservers()
     }
     
 }

@@ -51,34 +51,36 @@ public class NetworkServices {
     
     func requestGenerator<T: Codable>(route: APIConfiguration, type: T.Type,
                                       completion: @escaping(Result<T, APIError>) -> Void) {
-        do {
-            let urlRequest = try route.asURLRequest()
-            debugPrint("UrlRequest: \(urlRequest)")
-         
-            AF.request(urlRequest)
-                .validate()
-                .responseDecodable(of: T.self) { response in
-                    switch response.result {
-                    case .success(let data):
-                        debugPrint("requestGenerator Success")
-                        completion(.success(data))
-                    case .failure(let error):
-                        debugPrint("requestGenerator failure")
-                        if let afError = error as? AFError {
-                            let apiError = self.mapAFErrorToAPIError(afError)
-                            completion(.failure(apiError))
-                        } else {
-                            completion(.failure(.serverError(message: error.localizedDescription)))
-                        }
-                        
-                    }
-                }
-        } catch {
-            debugPrint("Error creating URL request: \(error)")
-            //completion(.failure(error as! AFError))
-            completion(.failure(.serverError(message: error.localizedDescription)))
-        }
         
+        // 在後台線程中執行網路請求操作,可以將 QoS 級別調整
+        DispatchQueue.global(qos: .utility).async {
+            
+            do {
+                let urlRequest = try route.asURLRequest()
+                debugPrint("UrlRequest: \(urlRequest)")
+                AF.request(urlRequest)
+                    .validate()
+                    .responseDecodable(of: T.self) { response in
+                        
+                        switch response.result {
+                        case .success(let data):
+                            debugPrint("requestGenerator Success")
+                            completion(.success(data))
+                        case .failure(let error):
+                            debugPrint("requestGenerator failure")
+                            if let afError = error as? AFError {
+                                let apiError = self.mapAFErrorToAPIError(afError)
+                                completion(.failure(apiError))
+                            } else {
+                                completion(.failure(.serverError(message: error.localizedDescription)))
+                            }
+                        }
+                    }
+            } catch {
+                debugPrint("Error creating URL request: \(error)")
+                completion(.failure(.serverError(message: error.localizedDescription)))
+            }
+        }
     }
     
     // Helper function to map AFError to APIError

@@ -7,8 +7,13 @@
 
 import Foundation
 
+struct ToursRequestParameters {
+    var categoryIds: String?
+    var page: Int?
+}
+
 protocol ToursAPIServiceProtocol {
-    func fetchData(categoryIds: String?, page: Int,
+    func fetchData(parameters: ToursRequestParameters,
                    completion: @escaping (Result<BaseModel<ToursModel>, APIError>) -> Void)
 }
 
@@ -20,8 +25,13 @@ class ToursAPIService: ToursAPIServiceProtocol {
         self.apiServices = apiServices
     }
     
-    func fetchData(categoryIds: String?, page: Int, completion: @escaping (Result<BaseModel<ToursModel>, APIError>) -> Void) {
-        apiServices.requestGenerator(route: ToursAPIConfiguration.theme(categoryIds: categoryIds, page: page),
+    func fetchData(parameters: ToursRequestParameters,
+                   completion: @escaping (Result<BaseModel<ToursModel>, APIError>) -> Void) {
+        
+        let toursAPIConfiguration = ToursAPIConfiguration.theme(categoryIds: parameters.categoryIds,
+                                                                page: parameters.page)
+        
+        apiServices.requestGenerator(route: toursAPIConfiguration,
                                      type: BaseModel<ToursModel>.self) { result in
             switch result {
             case .success(let data):

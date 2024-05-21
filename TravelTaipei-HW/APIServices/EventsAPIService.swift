@@ -8,34 +8,38 @@
 import Foundation
 import UIKit
 
+// 定義 EventsRequestParameters 參數封裝，可保持擴充性
+// 参数封装 struct，以接收這個 struct 作為參數
+struct EventsRequestParameters {
+    var begin: String?
+    var end: String?
+    var page: Int?
+    var categoryId: Int?
+}
+
 protocol EventsAPIServiceProtocol {
-    func fetchNewsData<T: Codable>(begin: String?, end: String?, page: Int?,
-                               modelType: T.Type,
-                               completion: @escaping (Result<BaseModel<NewsModel>, APIError>) -> Void)
-    func fetchActivityData<T: Codable>(begin: String?, end: String?, page: Int?,
-                               modelType: T.Type,
-                               completion: @escaping (Result<BaseModel<EventActivityModel>, APIError>) -> Void)
-    func fetchCalendarData<T: Codable>(categoryId: Int?, begin: String?, end: String?, page: Int?,
-                               modelType: T.Type,
-                               completion: @escaping (Result<BaseModel<EventCalendarModel>, APIError>) -> Void)
     
+    func fetchNewsData(parameters: EventsRequestParameters,
+                               completion: @escaping (Result<BaseModel<NewsModel>, APIError>) -> Void)
+    func fetchActivityData(parameters: EventsRequestParameters,
+                               completion: @escaping (Result<BaseModel<EventActivityModel>, APIError>) -> Void)
+    func fetchCalendarData(parameters: EventsRequestParameters,
+                               completion: @escaping (Result<BaseModel<EventCalendarModel>, APIError>) -> Void)
 }
 
 class EventsAPIService: EventsAPIServiceProtocol {
- 
+
     private let apiServices: NetworkServices
     
     init(apiServices: NetworkServices) {
         self.apiServices = apiServices
     }
-    
-    
-    private func presentErrorAlert() {
-        
-    }
-    
-    func fetchNewsData<T>(begin: String?, end: String?, page: Int?, modelType: T.Type, completion: @escaping (Result<BaseModel<NewsModel>, APIError>) -> Void) where T : Decodable, T : Encodable {
-        apiServices.requestGenerator(route: EventsAPIConfiguration.news(begin: begin, end: end, page: page), type: BaseModel<NewsModel>.self) { result in
+
+    func fetchNewsData(parameters: EventsRequestParameters, completion: @escaping (Result<BaseModel<NewsModel>, APIError>) -> Void) {
+        apiServices.requestGenerator(route: EventsAPIConfiguration.news(begin: parameters.begin,
+                                                                        end: parameters.end,
+                                                                        page: parameters.page),
+                                     type: BaseModel<NewsModel>.self) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))
@@ -45,8 +49,11 @@ class EventsAPIService: EventsAPIServiceProtocol {
         }
     }
     
-    func fetchActivityData<T>(begin: String?, end: String?, page: Int?, modelType: T.Type, completion: @escaping (Result<BaseModel<EventActivityModel>, APIError>) -> Void) where T : Decodable, T : Encodable {
-        apiServices.requestGenerator(route: EventsAPIConfiguration.activity(begin: begin, end: end, page: page), type: BaseModel<EventActivityModel>.self) { result in
+    func fetchActivityData(parameters: EventsRequestParameters, completion: @escaping (Result<BaseModel<EventActivityModel>, APIError>) -> Void) {
+        apiServices.requestGenerator(route: EventsAPIConfiguration.activity(begin: parameters.begin,
+                                                                            end: parameters.end,
+                                                                            page: parameters.page),
+                                     type: BaseModel<EventActivityModel>.self) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))
@@ -56,8 +63,12 @@ class EventsAPIService: EventsAPIServiceProtocol {
         }
     }
     
-    func fetchCalendarData<T>(categoryId: Int?, begin: String?, end: String?, page: Int?, modelType: T.Type, completion: @escaping (Result<BaseModel<EventCalendarModel>, APIError>) -> Void) where T : Decodable, T : Encodable {
-        apiServices.requestGenerator(route: EventsAPIConfiguration.calendar(categoryId: categoryId, begin: begin, end: end, page: page) , type: BaseModel<EventCalendarModel>.self) { result in
+    func fetchCalendarData(parameters: EventsRequestParameters, completion: @escaping (Result<BaseModel<EventCalendarModel>, APIError>) -> Void) {
+        apiServices.requestGenerator(route: EventsAPIConfiguration.calendar(categoryId: parameters.categoryId,
+                                                                            begin: parameters.begin,
+                                                                            end: parameters.end,
+                                                                            page: parameters.page),
+                                     type: BaseModel<EventCalendarModel>.self) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))
@@ -66,5 +77,5 @@ class EventsAPIService: EventsAPIServiceProtocol {
             }
         }
     }
-    
+
 }
